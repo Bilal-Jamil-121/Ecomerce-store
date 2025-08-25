@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../redux/counter/counterSlice";
-import { addToCart } from "../redux/cart/cartSlice";
+import { fetchUsers } from "./redux/counter/counterSlice";
+import { addToCart } from "./redux/cart/cartSlice";
 import { useSearchParams, useRouter } from "next/navigation";
-import Format from "../Helpers/Format";
+import Format from "./Helpers/Format";
 import Link from "next/link";
 
 const Page = () => {
