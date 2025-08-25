@@ -9,8 +9,7 @@ import {
 } from "../redux/cart/cartSlice";
 import Format from "../Helpers/Format";
 
-const formatPrice = (price) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(price);
+
 
 const Add_Cart = () => {
   const dispatch = useDispatch();
