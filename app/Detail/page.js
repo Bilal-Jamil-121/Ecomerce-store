@@ -20,8 +20,8 @@ function DetailPageContent() {
     if (status === "idle") dispatch(fetchUsers());
   }, [dispatch, status]);
 
-  if (status === "loading") return <p>Loading...</p>;
-  if (status === "failed") return <p>Error: {error}</p>;
+  if (status === "loading") return <p className="min-h-screen">Loading...</p>;
+  if (status === "failed") return <p className="min-h-screen">  Error: {error}</p>;
 
   const selectedUser = users.find((u) => String(u.id) === String(id));
   if (!selectedUser) return <p>User not found</p>;
