@@ -47,12 +47,12 @@ function DetailPageContent() {
     <div className="min-h-screen flex justify-center items-center bg-white px-4 py-10">
       <div className="p-6 max-w-md w-full bg-white rounded-2xl shadow-lg">
         <div className="overflow-hidden rounded-lg">
-        
-<img 
-  src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-  alt="product" 
-  className="w-full h-64 object-cover rounded"
-/>
+
+          <img
+            src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="product"
+            className="w-full h-64 object-cover rounded"
+          />
 
         </div>
 
