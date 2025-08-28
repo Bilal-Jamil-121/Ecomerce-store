@@ -6,7 +6,7 @@ import { fetchUsers } from "../redux/counter/counterSlice";
 import { addToCart } from "../redux/cart/cartSlice";
 import { useSearchParams, useRouter } from "next/navigation";
 import Format from "../Helpers/Format";
-import Image from "next/image";
+
 
 function DetailPageContent() {
   const searchParams = useSearchParams();
@@ -48,13 +48,12 @@ function DetailPageContent() {
       <div className="p-6 max-w-md w-full bg-white rounded-2xl shadow-lg">
         <div className="overflow-hidden rounded-lg">
         
-<Image
-  src={selectedUser.image}
-  alt={selectedUser.name}
-  width={500}
-  height={500}
-  className="w-full h-64 object-cover"
+<img 
+  src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+  alt="product" 
+  className="w-full h-64 object-cover rounded"
 />
+
         </div>
 
         <h2 className="text-2xl font-bold mt-4 text-gray-800">
