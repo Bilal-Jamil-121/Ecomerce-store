@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div
-      className="p-4 border h-60 rounded shadow relative bg-cover bg-center hover:scale-105 transition-transform2"
+      className="p-4 border h-60 rounded shadow relative bg-cover bg-center hover:scale-105 transition-transform"
       style={{
         backgroundImage: `url(${product.image})`,
       }}
