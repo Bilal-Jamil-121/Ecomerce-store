@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   const router = useRouter();
 
   const handleData = (product) => {
-    router.push(`/detail?id=${product.id}`); // query param bhejna
+    router.push(`/Detail?id=${product.id}`); // query param bhejna
   };
 
   return (
