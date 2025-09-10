@@ -3,13 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const clamp5 = (n) => Math.max(1, Math.min(5, Number(n) || 1));
 
-const initialState = { cart: [] };
+const initialState = {
+                     cart: [],
+                    color:"",
+ };
 
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
     addToCart: (state, action) => {
+
+      console.log(state,"state")
+      console.log(action,"action")
       const incoming = action.payload || {};
       const incomingId = String(incoming.id); // 🔑 normalize id
 
@@ -48,6 +54,9 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.cart = [];
     },
+    setColor: (state,action)=>{
+         state.color = action.payload
+    }
   },
 });
 
@@ -57,6 +66,7 @@ export const {
   decreaseAmount,
   removeFromCart,
   clearCart,
+  setColor,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

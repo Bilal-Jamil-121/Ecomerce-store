@@ -7,6 +7,9 @@ const initialState = {
   users: [],
   status: "idle",
   error: null,
+  searchQuery: "",
+  categoryFilter: "All",
+  ColorFilter: "All"
 };
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
@@ -17,7 +20,17 @@ export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
 export const counterSlice = createSlice({
   name: "counter",
   initialState,
-  reducers: {},
+  reducers: {
+      setSearchQuery:(state, action)=>{
+        state.searchQuery = action.payload
+      },
+      setCategoryFilter:(state, action)=>{
+        state.categoryFilter= action.payload
+      },
+      setColorFilter:(state,action)=>{
+            state.ColorFilter= action.payload
+      }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUsers.pending, (state) => {
@@ -33,7 +46,7 @@ export const counterSlice = createSlice({
       });
   },
 });
-
+export const {setSearchQuery, setCategoryFilter ,setColorFilter} = counterSlice.actions;
 export default counterSlice.reducer;
 
 

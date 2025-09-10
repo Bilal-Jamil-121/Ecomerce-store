@@ -27,7 +27,10 @@ export default function RootLayout({ children }) {
         <Providers>
           <div className="bg-white text-black min-h-screen">
             <Nav />
-            {children}
+            <div className="pt-20">
+               {children}
+            </div>
+           
             <Footer />
           </div>
         </Providers>

@@ -6,6 +6,7 @@ import {
   decreaseAmount,
   removeFromCart,
   clearCart,
+
 } from "../redux/cart/cartSlice";
 import Format from "../Helpers/Format";
 
@@ -15,10 +16,11 @@ const Add_Cart = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.cart);
 
-  const totalAmount = cart.reduce((total, item) => total + item.price * item.amount, 0);
-
+  const totalPrice = cart.reduce((total, item) => total + item.price * item.amount, 0);
+  const totalAmount = cart.reduce((acc,item)=> acc + item.amount,0);
   return (
-    <div className="min-h-screen md:flex flex-col items-center p-1 md:p-6 mx-1">
+    <div>
+    <div className="hidden min-h-screen md:flex flex-col items-center p-1 md:p-6 mx-1 overflow-auto">
       <h1 className="text-2xl font-bold mb-4">🛒 Your Cart</h1>
 
       {cart.length === 0 ? (
@@ -41,12 +43,20 @@ const Add_Cart = () => {
                  
                 </div>
               </div>
-
+ {item.color && (
+    <div className="flex items-center gap-2 text-sm text-gray-600">
+      <span>Color:</span>
+      <span
+        className="w-4 h-4 rounded-full border"
+        style={{ backgroundColor: item.color }}
+      />
+    </div>
+  )}
               <div className="flex items-center gap-1 md:gap-3">
                 <button
                   onClick={() => dispatch(decreaseAmount(item.id))}
                   disabled={item.amount === 1}
-                  className="px-2 py-1 text-2xl md:bg-gray-300 rounded cursor-pointer disabled:opacity-50"
+                  className="px-2 py-1 text-2xl md:bg-gray-300 rounded cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   -
                 </button>
@@ -54,7 +64,7 @@ const Add_Cart = () => {
                 <button
                   onClick={() => dispatch(increaseAmount(item.id))}
                   disabled={item.amount === 5}
-                  className="px-2 py-1 text-2xl md:bg-gray-300 rounded cursor-pointer disabled:opacity-50"
+                  className="px-2 py-1 text-2xl md:bg-gray-300 rounded cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   +
                 </button>
@@ -64,6 +74,7 @@ const Add_Cart = () => {
 
               <button
                 onClick={() => dispatch(removeFromCart(item.id))}
+                
                 className="text-red-600 font-bold cursor-pointer"
               >
                 ✕
@@ -72,9 +83,11 @@ const Add_Cart = () => {
           ))}
 
           <div className="mt-4 text-lg font-bold">
-            Total Amount: <Format price={totalAmount}/>
+            Total Price: <Format price={totalPrice}/>
           </div>
-
+              <div className="mt-4 text-lg font-bold">
+                  Total Items: {totalAmount}
+              </div>
           <button
             onClick={() => dispatch(clearCart())}
             className="mt-6 w-full bg-red-500 text-white py-2 cursor-pointer rounded-lg font-bold"
@@ -83,6 +96,8 @@ const Add_Cart = () => {
           </button>
         </div>
       )}
+    </div>
+    
     </div>
   );
 };
