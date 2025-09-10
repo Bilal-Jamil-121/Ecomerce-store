@@ -20,7 +20,7 @@ const Add_Cart = () => {
   const totalAmount = cart.reduce((acc,item)=> acc + item.amount,0);
   return (
     <div>
-    <div className="hidden min-h-screen md:flex flex-col items-center p-1 md:p-6 mx-1 overflow-auto">
+    <div className=" min-h-screen md:flex flex-col items-center p-1 md:p-6 mx-1 overflow-auto">
       <h1 className="text-2xl font-bold mb-4">🛒 Your Cart</h1>
 
       {cart.length === 0 ? (
