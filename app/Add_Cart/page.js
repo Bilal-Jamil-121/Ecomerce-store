@@ -20,7 +20,7 @@ const Add_Cart = () => {
   const totalAmount = cart.reduce((acc, item) => acc + item.amount, 0);
 
   return (
-    <div className="min-h-screen p-2 md:p-6">
+    <div className="min-h-screen p-2 md:p-6 mb-20">
       <h1 className="text-2xl font-bold mb-4 text-center">🛒 Your Cart</h1>
 
       {cart.length === 0 ? (
