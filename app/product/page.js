@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers} from "../redux/counter/counterSlice";
 import ProductCard from '@/components/ProductCard';
+import Loading from '@/components/Loading';
 import { setCategoryFilter, setSearchQuery, setColorFilter  } from '../redux/counter/counterSlice';
 import { MdFilterList } from "react-icons/md";
 import AOS from "aos";
@@ -59,7 +60,7 @@ console.log(colorarray);
 
 
 
-  if (status === "loading") return <p className="min-h-screen">Loading...</p>;
+  if (status === "loading") return <div className="flex items-center justify-center h-screen"><Loading/> </div> ;
   if (status === "failed") return <p className="min-h-screen">Error: {error}</p>;
 
   return (

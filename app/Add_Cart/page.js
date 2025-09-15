@@ -30,7 +30,7 @@ const Add_Cart = () => {
           {cart.map((item) => (
             <div
               key={String(item.id)}
-              className="flex md:flex-row items-center justify-between bg-gray-200 md:p-4 p-2 text-sm md:text-lg rounded-lg shadow"
+              className="flex  md:flex-row items-center justify-between bg-gray-200 md:p-4 p-2 text-sm md:text-lg rounded-lg shadow"
             >
               <div className="flex items-center gap-1 md:gap-4">
                 <img
