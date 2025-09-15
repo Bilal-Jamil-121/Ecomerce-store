@@ -70,7 +70,7 @@ const Add_Cart = () => {
                       <button
                         onClick={() => dispatch(decreaseAmount(item.id))}
                         disabled={item.amount === 1}
-                        className="md:px-2 md:py-1 p-1 bg-gray-300 rounded cursor-pointer disabled:opacity-50 disabled:cursor-none"
+                        className="md:px-2 md:py-1 p-1 bg-gray-300 rounded cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         -
                       </button>
@@ -78,7 +78,7 @@ const Add_Cart = () => {
                       <button
                         onClick={() => dispatch(increaseAmount(item.id))}
                         disabled={item.amount === 5}
-                        className="md:px-2 md:py-1 p-1 bg-gray-300 rounded cursor-pointer disabled:opacity-50 disabled:cursor-none"
+                        className="md:px-2 md:py-1 p-1 bg-gray-300 rounded cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         +
                       </button>
